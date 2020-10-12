@@ -1,0 +1,43 @@
+<template>
+  <div class="container">
+    <header>
+      <nuxt-link class="links" to="home">home</nuxt-link> |
+      <nuxt-link class="links" to="mall">mall</nuxt-link>
+    </header>
+    <main>main</main>
+    <footer>footer</footer>
+  </div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style>
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header,
+footer {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1210px;
+  background-color: #77940d;
+}
+main {
+  width: 1210px;
+  min-width: 1210px;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  background-color: #14d172;
+}
+.links {
+  margin: 0 15px;
+}
+</style>
