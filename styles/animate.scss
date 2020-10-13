@@ -1,0 +1,85 @@
+// Animation
+$animation-duration-base: .3s;
+$animation-duration-fast: .2s;
+
+@keyframes van-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes van-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+@keyframes van-slide-down-enter {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes van-slide-down-leave {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes van-slide-up-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes van-slide-up-leave {
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.van-slide-up {
+  &-enter-active {
+    animation: van-slide-up-enter $animation-duration-base both ease;
+  }
+
+  &-leave-active {
+    animation: van-slide-up-leave $animation-duration-base both ease;
+  }
+}
+
+.van-slide-down {
+  &-enter-active {
+    animation: van-slide-down-enter $animation-duration-base both ease;
+  }
+
+  &-leave-active {
+    animation: van-slide-down-leave $animation-duration-base both ease;
+  }
+}
+.van-fade {
+  &-enter-active {
+    animation: $animation-duration-base van-fade-in;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+  }
+
+  &-leave-active {
+    animation: $animation-duration-base van-fade-out;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+  }
+}

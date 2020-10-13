@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div id="app">
     <header-comp />
-    <Nuxt />
+    <transition name="van-fade">
+      <nuxt />
+    </transition>
     <footer-comp />
   </div>
 </template>

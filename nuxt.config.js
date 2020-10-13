@@ -1,3 +1,5 @@
+import config from './config'
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -8,14 +10,31 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        name: 'viewport',
+        content:
+          'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: config['site.description'],
+      },
+      { hid: 'keywords', name: 'keywords', content: config['site.keywords'] },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  // Customize the progress-bar
+  loading: '~/components/loading/PageLoading.vue',
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['element-ui/lib/theme-chalk/index.css', '@/styles/custom.scss'],
+  css: [
+    'normalize.css',
+    'element-ui/lib/theme-chalk/index.css',
+    '@/styles/animate.scss',
+    '@/styles/custom.scss',
+  ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['@/plugins/element-ui', '~/plugins/globalComponents/index.js'],
@@ -41,16 +60,18 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: { proxy: true },
   proxy: {
-    '/api': {
-      target: 'http://example.com',
-      pathRewrite: {
-        '^/api': '/',
-      },
+    '/api/': {
+      target: `${config['api.protocol']}://${config['api.domain']}`,
+      pathRewrite: { '^/api/': 'v1/' },
+    },
+    '/oss/': {
+      target: `${config['oss.protocol']}://${config['oss.domain.https']}`,
+      pathRewrite: { '^/oss/': '/' },
     },
   },
   server: {
-    port: 8000,
-    // host: '0.0.0.0', // default: localhost
+    port: config['server.port'],
+    host: config['server.host'],
   },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
@@ -59,5 +80,44 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
+    analyze: false,
+    extractCSS: process.env.NODE_ENV === 'production',
+    maxChunkSize: 300000,
+    postcss: {
+      plugins: {
+        'postcss-url': false,
+      },
+    },
+    babel: {
+      plugins: [
+        [
+          'component',
+          { libraryName: 'element-ui', styleLibraryName: 'theme-chalk' },
+        ],
+      ],
+    },
+    loaders: {
+      sass: {
+        implementation: require('sass'),
+      },
+      scss: {
+        implementation: require('sass'),
+        additionalData: '@import "@/styles/variables.scss";',
+      },
+    },
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, { isDev }) {
+      // Run ESLint on save
+      if (isDev && process.client) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+        })
+      }
+    },
   },
 }

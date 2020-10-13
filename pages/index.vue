@@ -1,9 +1,10 @@
 <template>
-  <div class="container">
+  <div class="app">
     <main>
       main
       <test></test>
     </main>
+    <main>main</main>
   </div>
 </template>
 
@@ -31,7 +32,7 @@ main {
   width: 1210px;
   min-width: 1210px;
   margin: 0 auto;
-  flex: 1;
+  height: 100vh;
   display: flex;
   background-color: #14d172;
 }
