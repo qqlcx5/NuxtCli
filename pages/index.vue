@@ -1,10 +1,6 @@
 <template>
-  <div class="app">
-    <main>
-      main
-      <test></test>
-    </main>
-    <main>main</main>
+  <div>
+    <svg-icon type="icon-huaban19"></svg-icon>
   </div>
 </template>
 

@@ -4,10 +4,6 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'saas',
-    // at.alicdn.com/t/font_1884226_knb0qtogevc.js
-    head: {
-      script: [{ src: '//at.alicdn.com/t/font_1884226_knb0qtogevc.js' }],
-    },
     meta: [
       { charset: 'utf-8' },
       {
