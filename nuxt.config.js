@@ -22,7 +22,10 @@ export default {
   },
 
   // Customize the progress-bar
-  loading: '~/components/loading/PageLoading.vue',
+  // loading: '~/components/loading/PageLoading.vue',
+  loading: {
+    color: 'blue',
+  },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [

@@ -1,10 +1,6 @@
 <template>
   <div @click="_onClick">
-    <svg
-      class="icon"
-      :style="{ color: color, 'font-size': size + 'px' }"
-      aria-hidden="true"
-    >
+    <svg class="icon" :style="styleObject" aria-hidden="true">
       <use :xlink:href="`#${type}`"></use>
     </svg>
   </div>
@@ -33,6 +29,22 @@ export default {
     size: {
       type: [Number, String],
       default: 30,
+    },
+    rotate: {
+      type: Boolean,
+      default: undefined,
+    },
+  },
+  computed: {
+    styleObject() {
+      const styleObject = {
+        color: this.color,
+        fontSize: this.size + 'px',
+      }
+      if (this.rotate) {
+        styleObject.animation = 'van-rotate 1s linear infinite'
+      }
+      return styleObject
     },
   },
   methods: {
