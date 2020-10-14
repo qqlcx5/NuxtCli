@@ -1,6 +1,7 @@
 import config from './config'
 
 export default {
+  target: 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'saas',
@@ -31,7 +32,8 @@ export default {
   // Customize the progress-bar
   // loading: '~/components/loading/PageLoading.vue',
   loading: {
-    color: '#f00',
+    color: '#559aff',
+    height: '3px',
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)

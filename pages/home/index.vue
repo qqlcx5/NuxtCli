@@ -1,5 +1,9 @@
 <template>
-  <div>
-    <nuxt-link to="/"> home </nuxt-link>
-  </div>
+  <h1>home</h1>
 </template>
+
+<script>
+export default {
+  middleware: 'authenticated',
+}
+</script>
