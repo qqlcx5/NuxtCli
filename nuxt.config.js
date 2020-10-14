@@ -18,13 +18,20 @@ export default {
       },
       { hid: 'keywords', name: 'keywords', content: config['site.keywords'] },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href:
+          'https://weminer.oss-cn-hongkong.aliyuncs.com/20200331/favicon.ico',
+      },
+    ],
   },
 
   // Customize the progress-bar
   // loading: '~/components/loading/PageLoading.vue',
   loading: {
-    color: 'blue',
+    color: '#f00',
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -51,8 +58,6 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/content
-    '@nuxt/content',
     'nuxt-clipboard2',
   ],
 

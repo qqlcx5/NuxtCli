@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
+    "dev": "cross-env nuxt",
+    "build": "cross-env nuxt build",
+    "start": "cross-env nuxt start",
+    "generate": "cross-env nuxt generate",
+    "lint:js": "cross-env eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "cross-env npm run lint:js"
   },
   "dependencies": {
     "@nuxt/content": "^1.9.0",
@@ -25,6 +25,7 @@
     "@nuxtjs/proxy": "^2.0.1",
     "babel-eslint": "^10.1.0",
     "babel-plugin-component": "^1.1.1",
+    "cross-env": "^7.0.2",
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-nuxt": "^1.0.0",

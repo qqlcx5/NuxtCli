@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>首页</div>
+    <img src="/weminerLogo.png" alt="" />
     <svg-icon
       type="icon-huaban27"
       size="100"
