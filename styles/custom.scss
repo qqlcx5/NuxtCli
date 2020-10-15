@@ -63,5 +63,18 @@ input {
 
 .mainView {
   margin: 0 auto;
-  width: 1260px;
+  width: $main-view-base;
+  min-width: $main-view-base;
+}
+
+.flex{ display: flex; }
+.flexc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flexb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

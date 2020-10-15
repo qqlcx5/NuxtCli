@@ -1,19 +1,13 @@
 <template>
   <div>
-    <div>首页</div>
-    <img src="/weminerLogo.png" alt="" />
-    <svg-icon
-      type="icon-huaban27"
-      size="100"
-      rotate
-      @click="handleIcon"
-    ></svg-icon>
+    <banner></banner>
   </div>
 </template>
 
 <script>
+import Banner from '~/components/other/Banner'
 export default {
-  components: {},
+  components: { Banner },
   methods: {
     handleIcon() {
       console.log('handleIcon')

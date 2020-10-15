@@ -1,5 +1,5 @@
 export const state = () => ({
-  list: [],
+  theme: 'default',
 })
 
 export const mutations = {
@@ -16,3 +16,5 @@ export const mutations = {
     todo.done = !todo.done
   },
 }
+
+export const actions = {}

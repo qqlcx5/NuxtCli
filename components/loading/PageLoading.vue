@@ -39,7 +39,7 @@ export default {
   position: fixed;
   left: 50%;
   bottom: 60px;
-  z-index: $z-index-overlay;
+  z-index: 995;
   transform: translateX(-50%);
 
   &__tip {
