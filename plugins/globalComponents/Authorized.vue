@@ -1,6 +1,7 @@
 <script>
 import { check } from '../../utils/auth'
 export default {
+  name: 'Authorized',
   functional: true,
   props: {
     authority: {
