@@ -11,7 +11,7 @@
 </template>
 
 <script>
-// import BounceLoading from './BounceLoading'
+// import BounceLoading from '~/components/loading/BounceLoading'
 export default {
   name: 'PageLoading',
   // components: {

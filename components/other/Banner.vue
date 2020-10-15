@@ -2,7 +2,8 @@
   <div class="banner">
     <el-carousel>
       <el-carousel-item v-for="item in 4" :key="item">
-        <img src="" alt="" srcset="" />
+        <!-- <img src="" alt="" srcset="" /> -->
+        <div class="flexc">{{ item }}</div>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -20,9 +21,15 @@ export default {}
     background: #666;
   }
 }
-img {
+.flexc {
   width: 100%;
   height: 100%;
-  background: #eee;
+}
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
 }
 </style>

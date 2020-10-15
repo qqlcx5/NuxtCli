@@ -18,21 +18,7 @@ export default {
       },
       { hid: 'keywords', name: 'keywords', content: config['site.keywords'] },
     ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href:
-          'https://weminer.oss-cn-hongkong.aliyuncs.com/20200331/favicon.ico',
-      },
-    ],
-  },
-
-  // Customize the progress-bar
-  // loading: '~/components/loading/PageLoading.vue',
-  loading: {
-    color: '#559aff',
-    height: '3px',
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -78,9 +64,6 @@ export default {
     port: config['server.port'],
     host: config['server.host'],
   },
-
-  // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
