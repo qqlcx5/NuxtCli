@@ -1,6 +1,10 @@
 import config from './config'
 
 export default {
+  // 静态服务部署 GITHUB
+  // router: {
+  //   base: '/vue-nuxt-template/',
+  // },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'saas',
