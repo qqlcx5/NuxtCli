@@ -15,23 +15,23 @@ import * as common from './modules/common' // 公共接口
 // import * as quiz from './modules/quiz' // 竞猜记录相关接口
 
 const request = {
-  common,
-  // user,
-  // verify,
-  // orders,
-  // income,
-  // contract,
-  // userassets,
-  // electric,
-  // banner,
-  // assets,
-  // recharge,
-  // withdraw,
-  // coupon,
-  // invitation,
-  // quiz,
+    common,
+    // user,
+    // verify,
+    // orders,
+    // income,
+    // contract,
+    // userassets,
+    // electric,
+    // banner,
+    // assets,
+    // recharge,
+    // withdraw,
+    // coupon,
+    // invitation,
+    // quiz,
 }
 
 export default (app, inject) => {
-  inject('https', request)
+    inject('https', request)
 }

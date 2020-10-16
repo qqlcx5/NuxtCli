@@ -1,18 +1,18 @@
 <template>
-  <main class="main">
-    <slot />
-  </main>
+    <main class="main">
+        <slot />
+    </main>
 </template>
 
 <script>
 export default {
-  name: 'LayoutMain',
+    name: 'LayoutMain',
 }
 </script>
 <style lang="scss" scoped>
 .main {
-  flex: 1;
-  overflow: hidden;
-  position: relative;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
 }
 </style>

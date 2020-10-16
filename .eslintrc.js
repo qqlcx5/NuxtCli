@@ -118,7 +118,6 @@ module.exports = {
         semi: [2, 'never'], // 不使用语句强制分号结尾
         'semi-spacing': [2, { before: false, after: true }], // 分号前后空格
         'space-before-blocks': [2, 'always'], // 不以新行开始的块{前面需要有空格
-        'space-before-function-paren': [2, 'never'], // 函数定义时括号前面需要有空格
         'space-in-parens': [2, 'never'], // 小括号里面不需要有空格
         'space-infix-ops': 2, // 中缀操作符周围需要有空格'
         'vue/no-parsing-error': [0, { 'x-invalid-end-tag': false }],

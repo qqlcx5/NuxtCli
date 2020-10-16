@@ -1,5 +1,5 @@
 <template>
-  <div>
-    <nuxt-link to="/"> mall </nuxt-link>
-  </div>
+    <div>
+        <nuxt-link to="/"> mall </nuxt-link>
+    </div>
 </template>

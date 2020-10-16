@@ -3,9 +3,9 @@ import defaultConfig from './default'
 
 let customConfig = {}
 try {
-  customConfig = require('./custom')
+    customConfig = require('./custom')
 } catch (e) {
-  customConfig = {}
+    customConfig = {}
 }
 const config = Object.assign(defaultConfig, customConfig)
 // const config = { ...defaultConfig, ...customConfig }
