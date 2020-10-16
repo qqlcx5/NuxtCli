@@ -55,6 +55,7 @@ $animation-duration-fast: .2s;
   }
 }
 
+
 .van-slide-up {
   &-enter-active {
     animation: van-slide-up-enter $animation-duration-base both ease;
