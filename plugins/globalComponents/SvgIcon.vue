@@ -1,5 +1,5 @@
 <template>
-  <div @click="_onClick">
+  <div class="icon-box" @click="_onClick">
     <svg class="icon" :style="styleObject" aria-hidden="true">
       <use :xlink:href="`#${type}`"></use>
     </svg>
@@ -56,6 +56,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.icon-box {
+  display: inline-block;
+}
 .icon {
   width: 1em;
   height: 1em;

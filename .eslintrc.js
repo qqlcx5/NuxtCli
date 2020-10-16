@@ -27,7 +27,7 @@ module.exports = {
     'constructor-super': 2, // 非派生类不能调用super，派生类必须调用super
     curly: [2, 'multi-line'], // 块级作用域可以不带大括号 https://eslint.org/docs/rules/curly#require-following-curly-brace-conventions-curly
     'dot-location': [2, 'property'], // 对象访问符的位置，换行的时候在行首 https://eslint.org/docs/rules/dot-location#enforce-newline-before-and-after-dot-dot-location
-    eqeqeq: [0, 'allow-null'], // 必须使用全等
+    eqeqeq: ['error', 'always', { null: 'ignore' }], // 必须使用全等
     indent: [2, 2, { SwitchCase: 1 }], // 缩进风格，switch缩进风格
     'jsx-quotes': [2, 'prefer-single'], // jsx使用单引号
     'key-spacing': [2, { beforeColon: false, afterColon: true }], // 对象字面量中冒号添加后空格
@@ -39,7 +39,7 @@ module.exports = {
     'no-class-assign': 2, // 禁止给类赋值
     'no-cond-assign': 2, // 禁止在条件表达式中使用赋值语句
     'no-const-assign': 2, // 禁止修改const声明的变量
-    'no-control-regex': 2, // 禁止在正则表达式中使用控制字符
+    'no-control-regex': 0, // 禁止在正则表达式中使用控制字符
     'no-delete-var': 2, // 不能对var声明的变量使用delete操作符
     'no-dupe-args': 2, // 函数参数不能重复
     'no-dupe-class-members': 2, // 对象成员不能重复
@@ -147,5 +147,16 @@ module.exports = {
     'prefer-const': 0, // 优先使用const
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'array-bracket-spacing': [2, 'never'], // 是否允许非空数组里面有多余的空格
+    'vue/max-attributes-per-line': [
+      2,
+      {
+        singleline: 10,
+        multiline: {
+          max: 1,
+          allowFirstLine: false,
+        },
+      },
+    ],
+    'vue/name-property-casing': ['error', 'PascalCase'],
   },
 }
