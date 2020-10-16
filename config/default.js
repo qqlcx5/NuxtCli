@@ -6,14 +6,6 @@ const config = {
   'site.name': '',
   'site.description': '',
   'site.keywords': '',
-  'api.protocol': '',
-  'api.version': '',
-  'api.domain': '',
-  'oss.protocol': '',
-  'oss.domain.default': '',
-  'oss.domain.custom': '',
-  'oss.domain.https': '',
-  '3rd.baiduAnalyze.id': '',
 }
 
 export default config

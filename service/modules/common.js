@@ -17,6 +17,22 @@ export function getCommonParam() {
     )
   })
 }
+export function newsLatest() {
+  return new Promise((resolve, reject) => {
+    https.get('/news/latest').then(
+      (res) => {
+        const result = Object.assign(res, {})
+        resolve({
+          status: !result.code,
+          result,
+        })
+      },
+      (err) => {
+        reject(err)
+      }
+    )
+  })
+}
 
 // 获取错误码
 export function getErrorCode() {

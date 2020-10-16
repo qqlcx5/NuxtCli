@@ -30,7 +30,11 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['@/plugins/element-ui', '~/plugins/globalComponents/index.js'],
+  plugins: [
+    '@/plugins/element-ui',
+    '~/plugins/globalComponents/index.js',
+    '~/service',
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -51,12 +55,12 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: { proxy: true },
   proxy: {
-    '/api/': {
-      target: `${config['api.protocol']}://${config['api.domain']}`,
-      pathRewrite: { '^/api/': 'v1/' },
+    '/api': {
+      target: 'http://106.14.200.71:5500',
+      pathRewrite: { '^/api': '/' },
     },
     '/oss/': {
-      target: `${config['oss.protocol']}://${config['oss.domain.https']}`,
+      target: 'http://106.14.200.71:5500',
       pathRewrite: { '^/oss/': '/' },
     },
   },

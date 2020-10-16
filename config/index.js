@@ -7,11 +7,10 @@ try {
 } catch (e) {
   customConfig = {}
 }
-
-const config = { ...defaultConfig, ...customConfig }
+const config = Object.assign(defaultConfig, customConfig)
+// const config = { ...defaultConfig, ...customConfig }
 
 // if (process.env.NODE_ENV !== 'production') {
-//   console.log('ShareManBoxNuxt configuration')
 //   console.table(config)
 // }
 
