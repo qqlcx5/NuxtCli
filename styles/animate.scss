@@ -78,9 +78,19 @@ $animation-duration-fast: .2s;
 .van-fade {
   &-enter-active {
     animation: $animation-duration-base van-fade-in;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
   }
 
   &-leave-active {
     animation: $animation-duration-base van-fade-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
   }
 }
