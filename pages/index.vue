@@ -4,7 +4,7 @@
     权限校验
     <div>
       <div>
-        权限校验权限校验权限校验
+        组件权限校验
         <div class="test">
           <authorized :authority="['user']"> authorized </authorized>
         </div>
