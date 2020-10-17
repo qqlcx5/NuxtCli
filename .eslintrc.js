@@ -150,16 +150,6 @@ module.exports = {
         'prefer-const': 0, // 优先使用const
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'array-bracket-spacing': [2, 'never'], // 是否允许非空数组里面有多余的空格
-        'vue/max-attributes-per-line': [
-            2,
-            {
-                singleline: 10,
-                multiline: {
-                    max: 1,
-                    allowFirstLine: false,
-                },
-            },
-        ],
         'vue/name-property-casing': ['error', 'PascalCase'],
     },
 }
