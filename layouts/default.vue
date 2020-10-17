@@ -13,6 +13,8 @@
 import HeaderComp from '~/components/layouts/Header'
 import MainComp from '~/components/layouts/Main'
 import FooterComp from '~/components/layouts/Footer'
+import { getToken } from '~/utils/auth'
+
 export default {
     components: {
         HeaderComp,
@@ -23,6 +25,20 @@ export default {
         key() {
             // 只要保证 key 唯一性就可以了，保证不同页面的 key 不相同
             return this.$route.fullPath
+        },
+    },
+    mounted() {
+        this.$nextTick(() => {
+            this.handleGetToken()
+        })
+    },
+    methods: {
+        handleGetToken() {
+            const token = getToken()
+            if (token) {
+                this.$store.commit('user/SET_TOKEN', token)
+                this.$store.dispatch('user/getInfo')
+            }
         },
     },
 }

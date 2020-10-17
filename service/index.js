@@ -1,5 +1,5 @@
 import * as common from './modules/common' // 公共接口
-// import * as user from './modules/user' // 用户接口
+import * as user from './modules/user' // 用户接口
 // import * as verify from './modules/verify' // 验证接口
 // import * as income from './modules/income' // 验证接口
 // import * as banner from './modules/banner' // 横幅接口
@@ -16,7 +16,7 @@ import * as common from './modules/common' // 公共接口
 
 const request = {
     common,
-    // user,
+    user,
     // verify,
     // orders,
     // income,

@@ -1,5 +1,5 @@
 <template>
-    <main class="main">
+    <main>
         <slot />
     </main>
 </template>
@@ -10,9 +10,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.main {
-    flex: 1;
-    overflow: hidden;
+main {
+    min-height: calc(100vh - 122px);
+    height: 100%;
     position: relative;
 }
 </style>

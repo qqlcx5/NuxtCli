@@ -69,6 +69,8 @@ input {
   margin: 0 auto;
   width: $main-view-base;
   min-width: $main-view-base;
+  max-width: $main-view-base;
+  overflow: hidden;
 }
 
 .flex{ display: flex; }

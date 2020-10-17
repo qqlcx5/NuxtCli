@@ -1,5 +1,6 @@
 import axios from 'axios'
 import qs from 'qs'
+import { getToken } from '~/utils/auth'
 
 const instance = axios.create({
     baseURL: '/api',
@@ -9,6 +10,8 @@ const instance = axios.create({
 // 开始修改请求数据
 instance.defaults.transformRequest = [
     (data, header) => {
+        const headerThis = header
+        headerThis.token = getToken()
         if (!header['Content-Type']) {
             return qs.stringify(data)
         }

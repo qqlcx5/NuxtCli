@@ -24,7 +24,7 @@ export default {
         },
         color: {
             type: String,
-            default: '#333',
+            default: '#666',
         },
         size: {
             type: [Number, String],
@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 .icon-box {
-    display: inline-block;
+    display: inline-flex;
 }
 .icon {
     width: 1em;

@@ -58,15 +58,15 @@ export default {
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
         'nuxt-clipboard2',
-        ['cookie-universal-nuxt', { alias: 'cookies' }],
     ],
 
     // Axios module configuration (https://go.nuxtjs.dev/config-axios)
     axios: { proxy: true },
     proxy: {
-        '/api': {
-            target: 'http://106.14.200.71:5500',
-            pathRewrite: { '^/api': '/' },
+        '/api/': {
+            // target: 'http://106.14.200.71:5500',
+            target: 'https://shop2.meijiabang.com/',
+            pathRewrite: { '^/api/': '/api/v4/' },
         },
         '/oss/': {
             target: 'http://106.14.200.71:5500',
