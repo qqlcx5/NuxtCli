@@ -28,9 +28,12 @@ export default {
         },
     },
     mounted() {
-        this.$nextTick(() => {
-            this.handleGetToken()
-        })
+        // this.$nextTick(() => {
+        //     this.handleGetToken()
+        // })
+    },
+    created() {
+        this.handleGetToken()
     },
     methods: {
         handleGetToken() {

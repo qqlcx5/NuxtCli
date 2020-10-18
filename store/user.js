@@ -1,4 +1,4 @@
-import { getToken, setToken, removeToken } from '~/utils/auth'
+import { setToken, removeToken } from '~/utils/auth'
 
 export const state = () => ({
     token: '',
@@ -46,10 +46,11 @@ export const actions = {
         if (status) {
             commit('SET_TOKEN', result.data)
             setToken(result.data)
+            dispatch('user/getInfo')
         }
     },
     // get user info
-    async getInfo({ commit, state }) {
+    async getInfo({ commit }) {
         const { status, result } = await this.$https.user.getUserProfile()
         if (status) {
             commit('SET_USERINFO', result.data)
