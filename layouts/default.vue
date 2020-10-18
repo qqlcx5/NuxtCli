@@ -28,16 +28,14 @@ export default {
         },
     },
     mounted() {
-        // this.$nextTick(() => {
-        //     this.handleGetToken()
-        // })
-    },
-    created() {
         this.handleGetToken()
+        //     this.$nextTick(() => {
+        //     })
     },
     methods: {
         handleGetToken() {
             const token = getToken()
+            console.log('token', token)
             if (token) {
                 this.$store.commit('user/SET_TOKEN', token)
                 this.$store.dispatch('user/getInfo')

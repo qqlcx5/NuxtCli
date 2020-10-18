@@ -16,7 +16,7 @@ export const state = () => ({
 
 export const mutations = {
     RESET_STATE: (state) => {
-        Object.assign(state, getDefaultState())
+        Object.assign(state, state)
     },
     SET_TOKEN: (state, token) => {
         state.token = token
@@ -36,18 +36,21 @@ export const mutations = {
 }
 
 export const actions = {
-    async login({ commit }, userInfo) {
-        const { username, password } = userInfo
-        const { status, result } = await this.$https.user.login({
-            username: username.trim(),
-            password,
-            delta: '1',
+    login({ commit }, userInfo) {
+        return new Promise((resolve, reject) => {
+            const { username, password } = userInfo
+            this.$https.user
+                .login({
+                    username: username.trim(),
+                    password,
+                    delta: '1',
+                })
+                .then((res) => {
+                    commit('SET_TOKEN', res.result.data)
+                    setToken(res.result.data)
+                    resolve(res)
+                })
         })
-        if (status) {
-            commit('SET_TOKEN', result.data)
-            setToken(result.data)
-            dispatch('user/getInfo')
-        }
     },
     // get user info
     async getInfo({ commit }) {
