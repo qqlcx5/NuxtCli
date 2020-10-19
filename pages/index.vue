@@ -2,22 +2,16 @@
     <div>
         <banner></banner>
         <div class="mainView">
-            <h3>storeToken</h3>
-            {{ storeToken }}
-            <h3>getToken</h3>
-            {{ getToken() }}
-            <h3>cookie</h3>
-            {{ token }}
-            <h3>头像</h3>
+            <div class="test">
+                <h3>storeToken</h3>
+                <div class="ellipsis">{{ storeToken }}</div>
+                <h3>getToken</h3>
+                <div class="ellipsis">{{ getToken() }}</div>
+                <h3>cookie</h3>
+                <div class="ellipsis">{{ token }}</div>
+                <h3>头像</h3>
+            </div>
             <img :src="$store.state.user.avatar" alt="" />
-        </div>
-        <div v-for="item in stories" :key="item.id" class="flex">
-            <div>{{ item.title }}</div>
-            <img :src="item.images[0]" alt="" />
-        </div>
-        <div v-for="item in top_stories" :key="item.id" class="flex">
-            <div>{{ item.title }}</div>
-            <img :src="item.image" alt="" />
         </div>
     </div>
 </template>
@@ -58,3 +52,8 @@ export default {
     },
 }
 </script>
+<style lang="scss">
+.test {
+    width: 100%;
+}
+</style>

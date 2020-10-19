@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-  <head {{ HEAD_ATTRS }}>
-    <script src="//at.alicdn.com/t/font_1752212_4n9j8bkff63.js"></script>
-    {{ HEAD }}
-  </head>
-  <body {{ BODY_ATTRS }}>
-    {{ APP }}
-  </body>
+    <head {{ HEAD_ATTRS }}>
+        <script src="//at.alicdn.com/t/font_1752212_4n9j8bkff63.js"></script>
+        <style>
+            @media only screen and (max-width: 1200px) {
+                .mainView {
+                    width: 990px !important;
+                    min-width: 990px !important;
+                    max-width: 990px !important;
+                }
+            }
+            /* 大屏幕（大桌面显示器，大于等于 1200px） */
+            @media only screen and (min-width: 1200px) {
+                .mainView {
+                    width: 1200px !important;
+                    min-width: 1200px !important;
+                    max-width: 1200px !important;
+                }
+            }
+        </style>
+        {{ HEAD }}
+    </head>
+    <body {{ BODY_ATTRS }}>
+        {{ APP }}
+    </body>
 </html>
