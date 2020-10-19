@@ -40,15 +40,14 @@ export const actions = {
         return new Promise((resolve, reject) => {
             const { username, password } = userInfo
             this.$https.user
-                .login({
-                    username: username.trim(),
-                    password,
-                    delta: '1',
-                })
+                .login({ username: username.trim(), password, delta: '1' })
                 .then((res) => {
                     commit('SET_TOKEN', res.result.data)
                     setToken(res.result.data)
-                    resolve(res)
+                    resolve(res.result)
+                })
+                .catch((error) => {
+                    reject(error)
                 })
         })
     },
@@ -57,7 +56,7 @@ export const actions = {
         const { status, result } = await this.$https.user.getUserProfile()
         if (status) {
             commit('SET_USERINFO', result.data)
-            commit('SET_AVATAR', result.data.avatar)
+            // commit('SET_AVATAR', result.data.avatar)
         }
         // return new Promise((resolve, reject) => {
         // getDepartmentInfo(state.token)

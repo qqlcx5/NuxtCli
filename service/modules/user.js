@@ -44,17 +44,25 @@ export function getUserProfile() {
     })
 }
 // 手机或邮箱密码登录接口
+// export function login(params) {
+//     return new Promise((resolve, reject) => {
+//         https.post('/user/login', params).then(
+//             (res) => {
+//                 let result = Object.assign(res, {})
+//                 resolve({ status: !result.code, result })
+//             },
+//             (err) => {
+//                 reject(err)
+//             }
+//         )
+//     })
+// }
+
 export function login(params) {
     return new Promise((resolve, reject) => {
-        https.post('/user/login', params).then(
-            (res) => {
-                let result = Object.assign(res, {})
-                resolve({ status: !result.code, result })
-            },
-            (err) => {
-                reject(err)
-            }
-        )
+        https.post('/user/login', params).then((res) => {
+            reslove(res)
+        })
     })
 }
 // 退出
