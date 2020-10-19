@@ -61,7 +61,7 @@ export function getUserProfile() {
 export function login(params) {
     return new Promise((resolve, reject) => {
         https.post('/user/login', params).then((res) => {
-            reslove(res)
+            resolve(res)
         })
     })
 }

@@ -2,7 +2,9 @@
     <div>
         <banner></banner>
         <div class="mainView">
-            <div class="test">
+            <div>
+                <h3>更换主题</h3>
+                <div class="green"></div>
                 <h3>storeToken</h3>
                 <div class="ellipsis">{{ storeToken }}</div>
                 <h3>getToken</h3>
@@ -52,8 +54,20 @@ export default {
     },
 }
 </script>
-<style lang="scss">
-.test {
-    width: 100%;
+<style lang="scss" scoped>
+.green {
+    width: 100px;
+    height: 100px;
+    background-color: #999;
+}
+.default-theme {
+    .green {
+        background-color: rgb(88, 182, 12);
+    }
+}
+.dark-theme {
+    .green {
+        background-color: rgb(182, 12, 106);
+    }
 }
 </style>

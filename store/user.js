@@ -1,22 +1,37 @@
 import { setToken, removeToken } from '~/utils/auth'
 
-export const state = () => ({
+const state = () => {
+    return {
+        token: '',
+        name: '',
+        avatar:
+            'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+        departmentInfo: {},
+        userPageList: {
+            data: [],
+            pageSize: null,
+            totalCount: null,
+            totalPage: null,
+        },
+    }
+}
+const DefaultState = {
     token: '',
     name: '',
     avatar:
         'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    userInfo: {},
+    departmentInfo: {},
     userPageList: {
         data: [],
         pageSize: null,
         totalCount: null,
         totalPage: null,
     },
-})
+}
 
-export const mutations = {
+const mutations = {
     RESET_STATE: (state) => {
-        Object.assign(state, state)
+        Object.assign(state, DefaultState)
     },
     SET_TOKEN: (state, token) => {
         state.token = token
@@ -35,16 +50,16 @@ export const mutations = {
     },
 }
 
-export const actions = {
+const actions = {
     login({ commit }, userInfo) {
         return new Promise((resolve, reject) => {
             const { username, password } = userInfo
             this.$https.user
                 .login({ username: username.trim(), password, delta: '1' })
                 .then((res) => {
-                    commit('SET_TOKEN', res.result.data)
-                    setToken(res.result.data)
-                    resolve(res.result)
+                    commit('SET_TOKEN', res.data)
+                    setToken(res.data)
+                    resolve(res)
                 })
                 .catch((error) => {
                     reject(error)
@@ -84,4 +99,10 @@ export const actions = {
             reject(error)
         })
     },
+}
+
+export default {
+    state,
+    mutations,
+    actions,
 }

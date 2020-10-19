@@ -23,11 +23,18 @@
                     <el-menu-item index="2-4-3">选项3</el-menu-item>
                 </el-submenu>
             </el-submenu>
+            <div class="flexc" style="height: 60px; width: 60px; outline: none">
+                <color-picker />
+            </div>
         </el-menu>
     </header>
 </template>
 <script>
+import ColorPicker from '../other/ColorPicker'
 export default {
+    components: {
+        ColorPicker,
+    },
     data() {
         return {
             activeIndex: '1',

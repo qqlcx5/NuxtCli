@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" :class="`${defaultTheme}-theme`">
         <header-comp />
         <main-comp>
             <transition name="van-fade">
@@ -26,11 +26,12 @@ export default {
             // 只要保证 key 唯一性就可以了，保证不同页面的 key 不相同
             return this.$route.fullPath
         },
+        defaultTheme() {
+            return this.$store.state.settings.theme
+        },
     },
     mounted() {
         this.handleGetToken()
-        //     this.$nextTick(() => {
-        //     })
     },
     methods: {
         handleGetToken() {
