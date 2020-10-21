@@ -87,6 +87,10 @@ input {
   justify-content: space-between;
   align-items: center;
 }
+.flexd {
+  display: flex;
+  flex-direction: column;
+}
 
 .ellipsis{
   @include ellipsis;

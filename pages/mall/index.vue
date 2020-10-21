@@ -195,8 +195,8 @@
                     <li>6</li>
                 </ul>
                 <div class="arrow">
-                    <a href="javascript:;" class="arrow-l"><</a>
-                    <a href="javascript:;" class="arrow-r">></a>
+                    <a href="javascript:;" class="arrow-l"></a>
+                    <a href="javascript:;" class="arrow-r"></a>
                 </div>
             </div>
             <div class="news">
